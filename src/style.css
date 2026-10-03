@@ -107,10 +107,10 @@ h3 { font-size: 17px; font-weight: 700; margin: 0 0 10px; letter-spacing: -.45px
   .brand-mark { height: 32px; width: 32px; }
   nav { gap: 14px; font-size: 11px; }
   nav a:first-child { display: none; }
-  .hero { padding: 44px 0 35px; grid-template-columns: 1fr; gap: 15px; }
+  .hero { padding: 44px 0 35px; grid-template-columns: minmax(0, 1fr); gap: 15px; }
   h1 { letter-spacing: -2.3px; font-size: 49px; }
   .hero-description { font-size: 14px; max-width: 340px; }
-  .hero-art { height: 290px; width: 300px; justify-self: center; max-width: 100%; }
+  .hero-art { height: 290px; width: min(300px, 100%); justify-self: center; }
   .note-back { right: 14px; top: 9px; }
   .note-front { left: 23px; top: 40px; }
   .art-caption { bottom: 0; right: 3px; }
