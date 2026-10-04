@@ -2,6 +2,7 @@ name: Site
 
 on:
   push:
+    branches: [main]
   pull_request:
   workflow_dispatch:
 
@@ -12,6 +13,7 @@ jobs:
   validate:
     name: Test and build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
         with:
@@ -29,11 +31,27 @@ jobs:
         with:
           path: dist
 
+  diff-hygiene:
+    name: Diff hygiene
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Check pull request diff
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: git --no-pager diff --no-ext-diff --no-textconv --check "$BASE_SHA...HEAD" --
+
   deploy:
     name: Deploy to Pages
     if: github.repository == 'leftovers-supply/sample-repo' && github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     needs: validate
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       pages: write
       id-token: write

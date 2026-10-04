@@ -10,4 +10,6 @@ An issue labeled `needs-prerequisite` is not ready to claim. Wait for its linked
 4. Add focused regression coverage where behavior changes. For code changes, run `npm test` and `npm run build`; manually check any affected UI. For documentation-only changes, validate the instructions, links, and diff without unnecessary builds. For visible changes, include a screenshot if available.
 5. Open a pull request referencing `Closes #<issue-number>`. Describe the behavior, verification results, and any limitations. Leave the merge decision to the maintainer.
 
+Before merging, **Test and build** and **Diff hygiene** must pass on an up-to-date branch. To check your diff locally, fetch `origin/main` and run `git diff --check origin/main...HEAD` for committed changes and `git diff --check` for uncommitted changes. Fix failed checks on the same PR; do not disable or bypass them. Pages deployment is not a PR check and runs only after changes reach `main`.
+
 The initial page intentionally has no search, filters, sort controls, saved items, theme toggle, or share buttons. These are separate exercises, not bugs to fix together. If an issue is already implemented or its requirements conflict with existing behavior, explain the mismatch before expanding scope.
