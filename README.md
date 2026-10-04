@@ -2,7 +2,7 @@
 
 A small Vue 3 website for practicing focused open-source contributions. Six handpicked web resources, a responsive layout, and a GitHub Pages deployment workflow.
 
-Expected Pages URL: <https://leftovers-supply.github.io/sample-repo/>. The first deployment must complete before this address is available.
+Live site: <https://leftovers-supply.github.io/sample-repo/>.
 
 ## Development
 
@@ -40,6 +40,10 @@ Every push and pull request runs validation with read-only repository permission
 
 ## Contributions
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AGENTS.md). The [issues labeled `leftovers-trial`](https://github.com/leftovers-supply/sample-repo/issues?q=is%3Aissue+is%3Aopen+label%3Aleftovers-trial) are small, independent exercises. Search, filtering, sorting, saved resources, theme switching, and share controls are planned contributions; they are not part of the initial scaffold.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AGENTS.md). The [issue backlog](https://github.com/leftovers-supply/sample-repo/issues) covers documentation, tests, accessibility and UX, resource discovery, personal library features, catalog authoring, and the static platform. These are planned contributions; the initial scaffold remains a simple resource collection.
+
+Use `area: …` labels to choose a domain and `difficulty: S`, `M`, `L`, or `XL` to choose the size of the task: a localized change, coordinated behavior, a substantial subsystem, or a complex bounded feature. Each issue defines its scope, acceptance criteria, verification, and prerequisites. The [full issue index](docs/backlog.md) maps backlog IDs to issues and their dependencies.
+
+Only [issues labeled `leftovers-trial`](https://github.com/leftovers-supply/sample-repo/issues?q=is%3Aissue+is%3Aopen+label%3Aleftovers-trial) are ready for the contribution pool. `needs-prerequisite` means wait for the linked issues to merge. A maintainer checks readiness and replaces that label with `leftovers-trial`; promotion is manual. Do not implement prerequisite issues inside an unrelated PR.
 
 Reference documentation: [Vue](https://vuejs.org/guide/quick-start.html), [Vite deployments](https://vite.dev/guide/static-deploy.html#github-pages), and [GitHub Pages workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
